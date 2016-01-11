@@ -2,12 +2,12 @@ package megos
 
 // State represents the JSON from the state.json of a mesos node
 type State struct {
-	ActivatedSlaves        float32     `json:"activated_slaves"`
-	BuildDate              string      `json:"build_date"`
-	BuildTime              float32     `json:"build_time"`
-	BuildUser              string      `json:"build_user"`
-	Cluster                string      `json:"cluster"`
-	CompletedFrameworks    []Framework `json:"completed_frameworks"`
+	ActivatedSlaves float32 `json:"activated_slaves"`
+	BuildDate       string  `json:"build_date"`
+	BuildTime       float32 `json:"build_time"`
+	BuildUser       string  `json:"build_user"`
+	Cluster         string  `json:"cluster"`
+	// CompletedFrameworks    []Framework `json:"completed_frameworks"`
 	DeactivatedSlaves      float32     `json:"deactivated_slaves"`
 	ElectedTime            float32     `json:"elected_time"`
 	Flags                  Flags       `json:"flags"`
@@ -99,9 +99,9 @@ type Flags struct {
 
 // Framework represent a single framework of a mesos node
 type Framework struct {
-	Active           bool       `json:"active"`
-	Checkpoint       bool       `json:"checkpoint"`
-	CompletedTasks   []Task     `json:"completed_tasks"`
+	Active     bool `json:"active"`
+	Checkpoint bool `json:"checkpoint"`
+	// CompletedTasks   []Task     `json:"completed_tasks"`
 	Executors        []Executor `json:"executors"`
 	FailoverTimeout  float32    `json:"failover_timeout"`
 	Hostname         string     `json:"hostname"`
@@ -198,11 +198,11 @@ type Executor struct {
 	// Missing fields
 	// TODO "queued_tasks": [],
 	// TODO "tasks": []
-	CompletedTasks []Task    `json:"completed_tasks"`
-	Container      string    `json:"container"`
-	Directory      string    `json:"directory"`
-	ID             string    `json:"id"`
-	Name           string    `json:"name"`
-	Resources      Resources `json:"resources"`
-	Source         string    `json:"source"`
+	// CompletedTasks []Task    `json:"completed_tasks"`
+	Container string    `json:"container"`
+	Directory string    `json:"directory"`
+	ID        string    `json:"id"`
+	Name      string    `json:"name"`
+	Resources Resources `json:"resources"`
+	Source    string    `json:"source"`
 }

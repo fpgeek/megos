@@ -122,13 +122,13 @@ type Framework struct {
 }
 
 type Offer struct {
-	ID          string            `json:"id"`
-	FrameworkID string            `json:"framework_id"`
-	SlaveID     string            `json:"slave_id"`
-	Hostname    string            `json:"hostname"`
-	URL         URL               `json:"url"`
-	Resources   Resources         `json:"resources"`
-	Attributes  map[string]string `json:"attributes"`
+	ID          string                 `json:"id"`
+	FrameworkID string                 `json:"framework_id"`
+	SlaveID     string                 `json:"slave_id"`
+	Hostname    string                 `json:"hostname"`
+	URL         URL                    `json:"url"`
+	Resources   Resources              `json:"resources"`
+	Attributes  map[string]interface{} `json:"attributes"`
 }
 
 type URL struct {
@@ -184,13 +184,13 @@ type TaskStatus struct {
 
 // Slave represents a single mesos slave node
 type Slave struct {
-	Active         bool              `json:"active"`
-	Hostname       string            `json:"hostname"`
-	ID             string            `json:"id"`
-	PID            string            `json:"pid"`
-	RegisteredTime float32           `json:"registered_time"`
-	Resources      Resources         `json:"resources"`
-	Attributes     map[string]string `json:"attributes"`
+	Active         bool                   `json:"active"`
+	Hostname       string                 `json:"hostname"`
+	ID             string                 `json:"id"`
+	PID            string                 `json:"pid"`
+	RegisteredTime float32                `json:"registered_time"`
+	Resources      Resources              `json:"resources"`
+	Attributes     map[string]interface{} `json:"attributes"`
 }
 
 // Executor represents a single executor of a framework
